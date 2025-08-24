@@ -4,6 +4,8 @@ Nutzung vom K-Means und DBSCAN Algorithmus zum positionalen erkennen von handges
 Im Projekt wird besondes auf die Erfüllung der SOLID Prinzipien(Single Responsibility Priciple, Interface Segregation Principle, Dependency Inversion Principle) geachtet. 
 Die Liskov Substitution Priciple wird hier nicht implementiert da keine Vererbung genutzt wird und die Open/Closed Priciple wird aufgrund der Unübersichtlichkeit, bei einem so kleinen Projekt, außenvor gelassen.
 
+Aus Datenschutzrechtlichen Gründen kann ich das Originale Bild nicht Hochladen, aber ich kann das Egebniss via Contouren und Boxen darstellen siehe unten.
+
 
 ## Vereinfachtes Klassendiagramm
 
@@ -79,3 +81,13 @@ direction TB
     WorkflowController ..> GoogledriveConnector 
     WorkflowController ..> ImagePDFConverter
 ```
+
+
+<!-- Die Darstellung mit HTML ist völlig KI generiert, ich weis nicht wie mann mit HTML umgeht und es intressiert mich auch nicht-->
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/fbd60279-9a6a-4076-b7a7-8e2f80716640" style="max-width:100%; height:auto;"/></td>
+    <td><img src="https://github.com/user-attachments/assets/341b1a3c-8376-4fec-9911-22b2757b905c" style="max-width:100%; height:auto;"/></td>
+  </tr>
+</table>
+
