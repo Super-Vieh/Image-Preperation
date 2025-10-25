@@ -6,6 +6,23 @@ Die Liskov Substitution Priciple wird hier nicht implementiert da keine Vererbun
 
 Aus Datenschutzrechtlichen Gründen kann ich das Originale Bild nicht Hochladen, aber ich kann das Egebniss via Contouren und Boxen darstellen siehe unten.
 
+Der Algorithmus funktioniert wie folgt:
+
+- Eine gescannte PDF des handschriftlichen Dokuments wird eingelesen.
+- Es wird in ein Bild konvertiert, Farben, Grautöne werden entfernt.
+- Aus dem Bild werden die Konturen (Handschrift) Hierarchielos entnommen mit cv2.findContours. Es entsteht eine Punktewolke.
+- Auf diese Punkte Wolke wird der DBSCAN-Algorithmus angewendet, welcher die Punkte zu Arealen verbindet (hoffentlich Wörter). Problem ist, dass Wörter die ein G, L, usw. haben in Gefahr laufen mit anderen Worten in anderen Zeilen verbunden zu werden, oder das aneinander geschriebene Wörter zu einem Areal verbunden werden.
+- Zu große Cluster(Doppelworte oder Worte welche über zwei Zeilen(g & l/h)) werden herausgefiltert und mit KMeans in zwei Worte geteilt, das wird wiederholt bis es keine zu großen Cluster(unnatürliche Proportionen) gibt.
+- Die zu großen Cluster werden mit dem DBSCAN-Algorithmus feingesäubert.
+- Die Cluster werden in Konturen konvertiert und dargestellt als Bounding Boxes oder Konturen
+
+Der Code enthält zusätzlich:
+- Auslesung eines Googledrives für das ausgangs Dokument
+- Konvertierung der Konturen in Bilder die nur die Wörter beinhalten
+- Einlesen der Wort-Bilder in den Googledrive
+
+
+
 
 ## Vereinfachtes Klassendiagramm
 
